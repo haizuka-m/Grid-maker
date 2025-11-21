@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# 🎨 Grid Maker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Grid Maker** は、CSS Grid レイアウトを視覚的にデザインし、すぐに使える HTML/CSS コードを生成するモダンな Web アプリケーションです。
+直感的な操作で、複雑なグリッドレイアウトも簡単に作成できます。
 
-Currently, two official plugins are available:
+![Grid Maker Preview](https://via.placeholder.com/800x450.png?text=Grid+Maker+Preview)
+*(スクリーンショットをここに追加予定)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ 主な機能
 
-## React Compiler
+*   **🖱️ ドラッグ & ドロップ操作**: グリッドアイテムをドラッグして自由に配置を変更できます。
+*   **📐 自由なリサイズ**: アイテムの右下をドラッグするだけで、サイズを直感的に調整可能。
+*   **⚙️ 詳細なグリッド設定**:
+    *   行 (Rows)・列 (Columns) の数をスライダーで調整 (1〜12)。
+    *   ギャップ (Gap) のサイズを調整 (0〜50px)。
+*   **🎨 アイテムのカスタマイズ**:
+    *   アイテムごとの名前変更。
+    *   カラーピッカーによる背景色の変更。
+    *   正確な配置のための数値入力にも対応。
+*   **📝 コード生成 & エクスポート**:
+    *   リアルタイムで HTML/CSS コードをプレビュー。
+    *   ワンクリックでクリップボードにコピー。
+    *   **HTML ファイルとしてエクスポート**し、すぐにブラウザで確認可能。
+    *   **折りたたみ可能なコード出力エリア**で、作業スペースを広く確保。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ 使用技術
 
-## Expanding the ESLint configuration
+*   **Frontend**: [React](https://react.dev/) (v19), [TypeScript](https://www.typescriptlang.org/)
+*   **Build Tool**: [Vite](https://vitejs.dev/)
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/) (v4)
+*   **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
+*   **Icons**: [Lucide React](https://lucide.dev/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 始め方
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### インストール
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+リポジトリをクローンし、依存関係をインストールします。
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/haizuka-m/Grid-maker.git
+cd Grid-maker
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 開発サーバーの起動
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+ブラウザで `http://localhost:5173` を開いてください。
+
+### ビルド
+
+本番環境用にビルドするには以下のコマンドを実行します。
+
+```bash
+npm run build
+```
+
+## 📦 デプロイ
+
+GitHub Pages へのデプロイが設定されています。
+
+```bash
+npm run deploy
+```
+
+## 📄 ライセンス
+
+MIT License
